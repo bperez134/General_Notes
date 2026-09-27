@@ -1,0 +1,34 @@
+Git LFS Computer Vision Datasets Mainly
+
+Install git lfs:
+	https://git-lfs.com/
+
+Run theese commands in your gitbash
+
+	git lfs install
+
+--Change the directory to your local repository I recommend using GitHub Desktop
+--Now back to the commands to run
+	
+	cd toyourrepo
+	git lfs track .zip
+	git add yourzipfile.zip
+	git commit -m "Whatever comment you want to add to your commit"
+	git push origin main
+
+====================================================================================================================
+
+In the event that you are uploading a folder that has large file (over 100mb) in it
+and you don't want to convert it into a zip you can do this:
+
+before using the git add yourfoldername/
+
+use this command
+
+ctrl c //to clear the command line
+git config --global core.safecrlf false
+
+You ONLY use this if you have an error similar to this:
+
+warning: in the working copy of 'Mine/Assets/XRI/Settings/XRInteractionEditorSettings.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Mine/Assets/XRI/Settings/XRInteractionEditorSettings.asset.meta', LF will be replaced by CRLF the next time Git touches it

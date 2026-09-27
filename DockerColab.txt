@@ -1,0 +1,15 @@
+Docker installation for Local Runtime in Google Colab
+
+su root
+	usermod -aG sudo,dialout <username>
+	shutdown -r now
+	sudo apt update && sudo apt upgrade
+
+install Docker to your machine
+	https://docs.docker.com/desktop/install/ubuntu/
+	Install the DEB package
+sudo apt install gnome-terminal
+sudo apt-get update
+sudo apt-get install ./docker-desktop-<version>-<arch>.deb //this command may not work because the file is not found
+sudo snap install docker
+sudo docker run -p 127.0.0.1:9000:8080 us-docker.pkg.dev/colab-images/public/runtime

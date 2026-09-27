@@ -1,0 +1,34 @@
+XR Rig
+	Input Action Manager
+		XRI Default Input Actions
+	XR Input Modularity Manager
+	
+Controllers
+	Controller Input Action Manager
+		Interactors
+			Near Far Interactor
+			Teleport Interactor
+		Controller Actions
+			XRI Left Locomotion
+	Haptic Impulse Player
+		Haptic Output
+			XRI Left/Haptic Device
+	Tracked Pose Driver
+			XRI Right/... (Input Action Reference)
+	XR Interaction Group
+		Group Name
+			Left
+ 
+Locomotion
+	XR Body Transformer
+	Locomotion Modifier
+
+Turn
+	Continuous Turn Provider
+		Left Hand Turn Input
+			XRI Left Locomotion/Turn
+	Snap Turn Provider
+		XRI Left Locomotion/Snap Turn
+Move
+	Dynamic Move Provider
+		xri left locomotion/move

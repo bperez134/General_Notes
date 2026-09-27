@@ -1,0 +1,25 @@
+MAKING A HYTALE SERVER
+
+mkdir <Name of Server>
+cd <Name of Server>
+
+MAKE SURE YOU HAVE THE CORRECT JAVA VERSION INSTALLED
+java --version
+
+mkdir hytale-downloader
+sudo unzip ./hytale-downloader.zip -d ./hytale-downloader
+
+cd hytale-downloader
+
+DOWNLOADS A ZIP FILE CONTAINING ASSETS AND 
+sudo ./hytale-downloader-linux-amd64 -download-path game.zip
+
+mkdir Server 
+
+cd hytale-downloader/
+
+sudo unzip ./game.zip -d ../Server/
+
+sudo rm game.zip
+
+

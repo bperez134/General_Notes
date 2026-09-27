@@ -1,0 +1,13 @@
+PALWORLD SERVER
+
+How to start the server:
+
+IP: 172.118.193.102:8211
+
+cd  steam/steamappscommon/PalServer
+./PalServer.sh -publiclobby
+
+
+Server Password: DisabledOnly
+Steam user to run the server
+	sudo -u steam -s 

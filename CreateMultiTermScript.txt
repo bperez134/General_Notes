@@ -1,0 +1,29 @@
+Example of how to format a script for running a set of commands then opening a
+new terminal and executing a new set of commands in the new terminal
+
+if using a vm you may have to use:
+sudo -i
+before running the script
+
+chmod +x <the script>
+./<the script>
+
+
+
+#!/bin/bash
+
+# Run initial set of commands
+echo "Updating package list..."
+sudo apt-get update
+echo "Installing curl..."
+sudo apt-get install -y curl
+echo "Initial commands completed."
+
+# Open a new terminal and run the next set of commands
+gnome-terminal -- bash -c "
+echo 'Checking disk usage...'
+df -h
+echo 'Listing home directory contents...'
+ls ~
+exec bash
+"

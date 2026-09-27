@@ -1,0 +1,15 @@
+WSL HOW TO FOR CONTAINERS
+=========================
+=========================
+BASIC COMMANDS : https://learn.microsoft.com/en-us/windows/wsl/basic-commands
+=========================
+wsl -l 															: List all distributions installed 
+wsl --shutdown 													: Shutdown
+wsl --terminate <Distribution Name> 							: Terminate Distribution
+wsl hostname -I 												: Identify IP address of Distribution
+wsl --export <Distribution Name> <File Name> 					: Export Distribution
+wsl --import <Distribution Name> <Install Location> <FileName> 	: Import Distribution
+wsl --unregister <Distribution Name> 							: Unregister or Uninstall a Linux Distribution
+wsl --intall -d <Distribution Name> 							: Install distribution with name
+wsl --list --online or wsl -l -o 								: List all available Linux Distributions
+

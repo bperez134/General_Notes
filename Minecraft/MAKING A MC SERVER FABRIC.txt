@@ -1,0 +1,57 @@
+sudo apt update && sudo apt upgrade -y
+
+INSTALLING JAVA
+sudo apt install openjdk-21-jdk-headless -y 
+
+CREATING YOU MINECRAFT SERVER FOLDER
+mkdir mc-server
+cd mc-server
+
+INSTALLING AND USING FABRIC
+Install fabric-installer-1.0.1.jar
+java -jar fabric-installer-1.0.1.jar server -mcversion 1.21.1 -downloadMinecraft
+
+STARTING THE SERVER WITH IT INTENTIONALLY FAILING TO AGREE
+TO THE MINECRAFT EULA
+java -Xmx2G -jar fabric-server-launch.jar nogui
+sed -i 's/eula=false/eula=true/' eula.txt
+
+mkdir mods
+cd mods
+INSTALL WHICHEVER MODS/MODPACK YOU WANT AND MOVE 
+THEM INTO THE mods FOLDER (MODRINTH.COM)
+cd ..
+
+CREATING AND GRANTING PERMISSIONS TO THE start.sh SCRIPT
+echo "java -Xmx2G -jar fabric-server-launch.jar nogui" > start.sh
+chmod +x start.sh
+
+RUN THIS TO START THE SERVER
+./start.sh
+
+TYPE stop IN TERMINAL TO STOP THE SERVER
+
+
+My servers ip:
+
+83.171.251.179:25565
+
+PORT FORWARDING SETUP
+
+sudo ufw status
+
+sudo ufw enable
+
+sudo ufw allow 25565/tcp
+sudo ufw allow 25565/udp
+
+sudo ufw status
+
+FOR LOCAL IP CONNECTION
+hostname -I 
+
+FOR PUBLIC IP CONNECTION
+curl ifconfig.me
+
+USING PORT 
+25565
