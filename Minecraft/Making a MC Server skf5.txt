@@ -1,0 +1,37 @@
+sudo apt update && sudo apt upgrade -y
+
+java -version
+
+# INSTALLING JAVA 17 (Required for Minecraft 1.20.1)
+sudo apt install openjdk-17-jdk-headless -y 
+
+# CREATING YOUR MINECRAFT SERVER FOLDER
+mkdir sf5-server
+cd sf5-server
+
+# DOWNLOADING AND EXTRACTING THE OFFICIAL SKYFACTORY 5 SERVER FILES
+# Note: You can find or update the latest download link on CurseForge
+wget -O sf5_server.zip https://forgecdn.net
+sudo apt install unzip -y
+unzip sf5_server.zip
+rm sf5_server.zip
+
+# RUNNING THE FORGE INSTALLER SCRIPT PROVIDED BY THE PACK
+# This downloads the necessary Forge libraries and the Mojang server jar
+chmod +x install.sh
+./install.sh
+
+# STARTING THE SERVER WITH IT INTENTIONALLY FAILING TO AGREE TO THE EULA
+# (Allocating 6GB minimum for SkyFactory 5, as 2GB will crash modded 1.20.1)
+java -Xmx6G -jar user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-*/unix_args.txt nogui
+sed -i 's/eula=false/eula=true/' eula.txt
+
+# CREATING THE LAUNCH SCRIPT
+# Pre-made start scripts usually come with the pack, but you can build a clean one:
+echo "java -Xmx6G @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.3.0/unix_args.txt nogui" > start.sh
+chmod +x start.sh
+
+# RUN THIS TO START THE SERVER
+./start.sh
+
+# TYPE stop IN TERMINAL TO STOP THE SERVER
